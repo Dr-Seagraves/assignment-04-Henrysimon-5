@@ -1,8 +1,10 @@
 # Assignment 04 Interpretation Memo
 
-**Student Name:** [Your Name]
-**Date:** [Submission Date]
+**Student Name:** Henry Simon
+**Date:** February 13, 2026
 **Assignment:** REIT Annual Returns and Predictors (Simple Linear Regression)
+
+> **To fill this report:** Run `python assignment04_regression.py`, then copy the regression coefficients and statistics into the sections marked `[PASTE_HERE]`. See `FILL_REPORT_GUIDE.md` for exact mapping.
 
 ---
 
@@ -23,19 +25,19 @@ For each model, summarize the key results in the sections below.
 ## 2. Coefficient Comparison (All Three Regressions)
 
 **Model 1: ret ~ div12m_me**
-- Intercept (β₀): [value] (SE: [value], p-value: [value])
-- Slope (β₁): [value] (SE: [value], p-value: [value])
-- R²: [value] | N: [value]
+- Intercept (β₀): [COEF_1] (SE: [SE_1], p-value: [PVAL_1])
+- Slope (β₁): [COEF_2] (SE: [SE_2], p-value: [PVAL_2])
+- R²: [R2_1] | N: [N_1]
 
 **Model 2: ret ~ prime_rate**
-- Intercept (β₀): [value] (SE: [value], p-value: [value])
-- Slope (β₁): [value] (SE: [value], p-value: [value])
-- R²: [value] | N: [value]
+- Intercept (β₀): [COEF_3] (SE: [SE_3], p-value: [PVAL_3])
+- Slope (β₁): [COEF_4] (SE: [SE_4], p-value: [PVAL_4])
+- R²: [R2_2] | N: [N_2]
 
 **Model 3: ret ~ ffo_at_reit**
-- Intercept (β₀): [value] (SE: [value], p-value: [value])
-- Slope (β₁): [value] (SE: [value], p-value: [value])
-- R²: [value] | N: [value]
+- Intercept (β₀): [COEF_5] (SE: [SE_5], p-value: [PVAL_5])
+- Slope (β₁): [COEF_6] (SE: [SE_6], p-value: [PVAL_6])
+- R²: [R2_3] | N: [N_3]
 
 *Note: Model 3 may have fewer observations if ffo_at_reit has missing values; statsmodels drops those rows.*
 
@@ -44,57 +46,66 @@ For each model, summarize the key results in the sections below.
 ## 3. Slope Interpretation (Economic Units)
 
 **Dividend Yield (div12m_me):**
-- A 1 percentage point increase in dividend yield (12-month dividends / market equity) is associated with a [slope value] change in annual return.
-- [Your interpretation: Is higher dividend yield associated with higher or lower returns? Why might this be?]
+- A 1 percentage point increase in dividend yield is associated with a **[COEF_2]** change in annual return.
+- **Your interpretation:** [Is higher dividend yield associated with higher or lower returns? Why might this be?]
 
 **Prime Loan Rate (prime_rate):**
-- A 1 percentage point increase in the year-end prime rate is associated with a [slope value] change in annual return.
-- [Your interpretation: Does the evidence suggest REIT returns are sensitive to interest rates? In which direction?]
+- A 1 percentage point increase in the year-end prime rate is associated with a **[COEF_4]** change in annual return.
+- **Your interpretation:** [Does the evidence suggest REIT returns are sensitive to interest rates? In which direction? Why?]
 
 **FFO to Assets (ffo_at_reit):**
-- A 1 unit increase in FFO/Assets (fundamental performance) is associated with a [slope value] change in annual return.
-- [Your interpretation: Do more profitable REITs (higher FFO/Assets) earn higher returns?]
+- A 1 unit increase in FFO/Assets is associated with a **[COEF_6]** change in annual return.
+- **Your interpretation:** [Do more profitable REITs earn higher returns? What does this tell us about market efficiency?]
 
 ---
 
 ## 4. Statistical Significance
 
-For each slope, at the 5% significance level:
-- **div12m_me:** [Significant / Not significant] — [one sentence conclusion]
-- **prime_rate:** [Significant / Not significant] — [one sentence conclusion]
-- **ffo_at_reit:** [Significant / Not significant] — [one sentence conclusion]
+For each slope, check if p-value < 0.05 (marked with *** in console output):
 
-**Which predictor has the strongest statistical evidence of a relationship with annual returns?** [Your answer]
+- **div12m_me (p-value [PVAL_2]):** [Significant / Not significant] — [one sentence conclusion]
+- **prime_rate (p-value [PVAL_4]):** [Significant / Not significant] — [one sentence conclusion]
+- **ffo_at_reit (p-value [PVAL_6]):** [Significant / Not significant] — [one sentence conclusion]
+
+**Which predictor has the strongest statistical evidence?** [Your answer: Look for the smallest p-value]
 
 ---
 
 ## 5. Model Fit (R-squared)
 
-Compare R² across the three models:
-- [Your interpretation: Which predictor explains the most variation in annual returns? Is R² high or low in general? What does this suggest about other factors driving REIT returns?]
+Compare the three R² values: [R2_1], [R2_2], [R2_3]
+
+- **Which explains the most variation?** [Your answer]
+- **Are these R² values high or low?** [Your interpretation]
+- **What does this suggest about other factors driving REIT returns?** [Your answer]
 
 ---
 
 ## 6. Omitted Variables
 
-By using only one predictor at a time, we might be omitting:
-- [Variable 1]: [Why it might matter]
-- [Variable 2]: [Why it might matter]
-- [Variable 3]: [Why it might matter]
+We're only using one predictor at a time. What important variables might we be missing?
 
-**Potential bias:** If omitted variables are correlated with both the X variable and ret, our slope estimates may be biased. [Brief discussion of direction if possible]
+- **[Variable 1]:** [Why it might matter for REIT returns]
+- **[Variable 2]:** [Why it might matter]
+- **[Variable 3]:** [Why it might matter]
+
+**Potential bias:** If an omitted variable is correlated with BOTH your X variable AND returns, your slope estimate could be biased. [Brief discussion: which direction? why?]
 
 ---
 
-## 7. Summary and Next Steps
+## 7. Summary and Key Takeaway
 
-**Key Takeaway:**
-[2-3 sentences summarizing which predictor(s) show the strongest relationship with REIT annual returns and whether the evidence is consistent with economic theory]
+**Main finding:**
+Based on your three regressions, which predictor(s) matter most for explaining REIT annual returns?
+- [2-3 sentences: Which X variable had the strongest relationship with returns (highest |slope|, lowest p-value, highest R²)?]
+- [Does this make economic sense? Why or why not?]
+- [What surprised you, if anything?]
 
 **What we would do next:**
-- Extend to multiple regression (include two or more predictors)
+- Extend to multiple regression (include two or more predictors simultaneously)
 - Test for heteroskedasticity and other OLS assumption violations
 - Examine whether relationships vary by time period or REIT sector
+
 
 ---
 
