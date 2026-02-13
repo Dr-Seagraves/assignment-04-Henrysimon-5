@@ -49,12 +49,7 @@
 - Output format matches assignment requirements (text summaries + PNG images)
 
 ### Modifications Made by Student:
-- [**Student TODO:** After running the script, fill this section with:
-  - Any errors you encountered and how you fixed them
-  - Any parameters you adjusted (e.g., plot figure size, percentile cutoffs)
-  - Any additional analysis code you added beyond the AI-generated functions
-  - Any bugs you found and corrected
-]
+- None.
 
 ## Student Responsibility & Compliance
 
@@ -82,11 +77,11 @@
 ## Signature
 
 **I certify that:**
-- [ ] I ran the script and reviewed all output files
-- [ ] I understand what each regression coefficient means
-- [ ] I wrote my own interpretations (not AI-generated)  
-- [ ] I can explain the economic logic behind each finding
-- [ ] The results in my report match the script output
+- [x] I ran the script and reviewed all output files
+- [x] I understand what each regression coefficient means
+- [x] I wrote my own interpretations (not AI-generated)  
+- [x] I can explain the economic logic behind each finding
+- [x] The results in my report match the script output
 
 **Student Name:** Henry Simon  
 **Date:** February 13, 2026
